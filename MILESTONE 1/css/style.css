@@ -1,0 +1,43 @@
+/* RESET */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*  COMMONS */
+#root{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* test */
+    background-color: red;
+}
+.container-background-TOP{
+    width: 100%;
+    height: 18%;
+    background-color: #209688;
+}
+.container-background-BOTTOM{
+    width: 100%;
+    height: calc(100% - 18%);
+    background-color: #d8dbd7;
+}
+.app-wrapper{
+    margin: auto;
+    width: 70%;
+    height: 95%;
+    position: absolute;
+    top: calc((100vh - 95%)/ 2);
+    left: 0;
+    right: 0;
+    /* test */
+    border: 1px solid black;
+}
+/* END COMMONS */
+
+/* HEADER */
+/* END HEADER */
+
+/* MAIN */
+/* END MAIN */
