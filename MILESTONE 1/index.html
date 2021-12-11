@@ -15,6 +15,12 @@ visualizzare nome e immagine di ogni contatto -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
     <!-- end framework -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- gogole font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Vue Boolzapp</title>
 </head>
 <body>
@@ -28,24 +34,80 @@ visualizzare nome e immagine di ogni contatto -->
 
             <!-- HEADER -->
             <header>
-                <!-- COL -->
+                <!-- COL SX-->
                 <div class="col col-sx">
+                    <!-- user profile -->
+                    <div id="user-profile" class="vertical-center">
+                        <div class="circle-profile">
+                            <img src="../boolzapp-assets/img/avatar_1.jpg" alt="">
+                        </div>
+                        <!-- user name -->
+                        <h3>Nome Utente</h3>
+                    </div>
+
+                    <!-- user menù -->
+                    <div class="user-menu">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
 
                 </div>
-                <!-- COL -->
+                <!-- COL DX-->
                 <div class="col col-dx">
 
+                    <!-- current profile -->
+                    <div id="current-profile" class="vertical-center">
+                        <div class="circle-profile">
+                            <img src="../boolzapp-assets/img/avatar_1.jpg" alt="">
+                        </div>
+                        <!-- user name -->
+                        <div>
+                            <h3>Nome Utente</h3>
+                            <div class="last-access">Ultimo accesso oggi alle</div>
+                        </div>
+                    </div>
+
+                    <!-- user menù -->
+                    <div class="user-menu">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
             </header>
             <!-- END HEADER -->
 
             <!-- MAIN -->
             <main>
+                <!-- COL SX -->
                 <div class="col col-sx">
 
+                    <!-- notifications -->
+                    <div id="notification" class="vertical-center">
+                        <!-- img notification -->
+                        <div class="circle-profile vertical-horrizontal-center">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <!-- mex notification -->
+                        <div class="mex-notification">
+                            <div>Ricevi notifiche di nuovi messaggi</div>
+                            <a href="#">Attiva notifiche dekstop</a>
+                        </div>
+                    </div> 
+                    
+                    <!-- serch contact -->
+                    <div id="container-serch" class="vertical-horrizontal-center">
+                        <div id="serch-bar" class="vertical-center">
+                            <i class="fas fa-search"></i>
+                            <span>Cerca o inizia una nuova chat</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-dx">
 
+                <!-- COL DX -->
+                <div class="col col-dx">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ipsam sit dolores, vitae nesciunt molestiae voluptates maiores sint minima aut cum laboriosam, iure provident id ipsum asperiores vero. Nobis, error.
                 </div>
             </main>
             <!-- END MAIN -->
