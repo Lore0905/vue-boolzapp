@@ -11,6 +11,9 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
+i {
+    cursor: pointer;
+}
 /*  COMMONS */
 #root{
     width: 100%;
@@ -37,15 +40,10 @@ body{
     top: calc((100vh - 95%)/ 2);
     left: 0;
     right: 0;
-    /* test */
-    border: 1px solid black;
 }
 /* col */
 .col{
     height: 100%;
-
-    /* test */
-    border: 1px solid black;
 }
 .col-sx{
     width: 37%;
@@ -172,8 +170,23 @@ main{
     background-image: url(../../boolzapp-assets/img/mine.jpg);
 }
 #mex-bar{
-    width: 100%;
     height: 50px;
-    border: 1px solid black;
+    background-color: #f3eeea;
+}
+#input-mex{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#input-mex > input{
+    width: 100%;
+    height: 35px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+#emoticon, #audio{
+    font-size: 20px;
+    margin: 0 5%;
 }
 /* END MAIN */
