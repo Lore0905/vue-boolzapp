@@ -57,13 +57,13 @@ Click sul contatto mostra la conversazione del contatto cliccato -->
                 <div class="col col-dx">
 
                     <!-- single profile -->
-                    <div id="current-profile" class="vertical-center">
+                    <div id="active-profile" class="vertical-center ">
                         <div class="circle-profile">
-                            <img src="../boolzapp-assets/img/avatar_1.jpg" alt="">
+                            <img :src="'../boolzapp-assets/img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
                         </div>
                         <!-- user name -->
                         <div class="info-current-profile">
-                            <h3>Nome Utente</h3>
+                            <h3>{{contacts[activeContact].name}}</h3>
                             <div class="last-access">Ultimo accesso oggi alle</div>
                         </div>
                     </div>
@@ -106,7 +106,9 @@ Click sul contatto mostra la conversazione del contatto cliccato -->
 <!-- ---------------------------------------------------------------------------------- -->
                     <div id="contacts-wrap">
                             <!-- single CONTACT -->
-                        <div v-for="(contact, index) in contacts" class="contact-container vertical-center" @click="singleChat(index)">
+                        <div v-for="(contact, index) in contacts" 
+                        class="contact-container vertical-center" 
+                        @click="singleChat(index)">
                             <div id="contact" class="vertical-center">
                                 <div class="circle-profile">
                                     <img :src="'../boolzapp-assets/img/avatar' + contact.avatar + '.jpg'" alt="">

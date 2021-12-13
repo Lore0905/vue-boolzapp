@@ -3,7 +3,7 @@ Vue.config.devtools = true;
 var app5 = new Vue({
     el: '#root',
     data: {
-        activeContact: 2,
+        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -93,8 +93,9 @@ var app5 = new Vue({
     },
     methods: {
       singleChat: function(index){
-          
-        }
+          this.activeContact = index
+
+        },
     }
 })
 
