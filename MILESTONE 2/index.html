@@ -128,7 +128,7 @@ Click sul contatto mostra la conversazione del contatto cliccato -->
                     <!-- mex container -->
                     <div id="mex-wrapper">
                         <div class="mex-container" v-for="mex in contacts[activeContact].messages" 
-                            :class="{'recived' : mex.status === 'received'} ">
+                            :class="{'recived' ? mex.status === 'received' : 'send'} ">
 
                             <div>
                                 <p> {{mex.text}}</p>
