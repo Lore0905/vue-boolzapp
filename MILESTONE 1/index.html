@@ -19,15 +19,13 @@ visualizzare nome e immagine di ogni contatto -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- gogole font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Vue Boolzapp</title>
 </head>
 <body>
     
     <div id="root">
-        <!-- container background TOP -->
-        <div class="container-background-TOP"></div>
 
         <!-- app wrapper -->
         <div class="app-wrapper">
@@ -42,7 +40,9 @@ visualizzare nome e immagine di ogni contatto -->
                             <img src="../boolzapp-assets/img/avatar_io.jpg" alt="">
                         </div>
                         <!-- user name -->
-                        <h3>Nome Utente</h3>
+                        <div class="info-user-profile">
+                            <h3>Nome Utente</h3>
+                        </div>
                     </div>
 
                     <!-- user menù -->
@@ -62,7 +62,7 @@ visualizzare nome e immagine di ogni contatto -->
                             <img src="../boolzapp-assets/img/avatar_1.jpg" alt="">
                         </div>
                         <!-- user name -->
-                        <div>
+                        <div class="info-current-profile">
                             <h3>Nome Utente</h3>
                             <div class="last-access">Ultimo accesso oggi alle</div>
                         </div>
@@ -104,16 +104,20 @@ visualizzare nome e immagine di ogni contatto -->
                         </div>
                     </div>
 <!-- ---------------------------------------------------------------------------------- -->
-                    <!-- CONTACT -->
-                    <div v-for="contact in contacts" class="contact-container vertical-center">
-                        <div id="contact" class="vertical-center">
-                            <div class="circle-profile">
-                                <img :src="'../boolzapp-assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                    <div id="contacts-wrap">
+                            <!-- single CONTACT -->
+                        <div v-for="contact in contacts" class="contact-container vertical-center">
+                            <div id="contact" class="vertical-center">
+                                <div class="circle-profile">
+                                    <img :src="'../boolzapp-assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                </div>
+                                <!-- user name -->
+                                <h3>{{contact.name}}</h3>
                             </div>
-                            <!-- user name -->
-                            <h3>{{contact.name}}</h3>
                         </div>
+
                     </div>
+                    
 <!-- ---------------------------------------------------------------------------------- -->
 
                 </div>
@@ -126,7 +130,7 @@ visualizzare nome e immagine di ogni contatto -->
                         <div class="mex-container">
 
                             <div class="recived">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil</p>
+                                <p> ciao</p>
                                 <!-- date -->
                                 <div class="date">
                                     11/05/2020
@@ -168,8 +172,6 @@ visualizzare nome e immagine di ogni contatto -->
 
         </div>
 
-        <!-- container background BOTTOM -->
-        <div class="container-background-BOTTOM"></div>
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
