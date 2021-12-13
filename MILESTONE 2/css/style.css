@@ -203,13 +203,13 @@ main > .col-sx{
     margin: 0 5%;
 }
 /* mex text*/
-.mex-container{
+#mex-wrapper{
     display: flex;
     flex-direction: column;
-    
 }
 /* commons mex recived and send */
-.recived, .send{
+
+.recived, .sent{
     min-width: 17%;
     max-width: 80%;
     border-radius: 10px;
@@ -221,7 +221,7 @@ main > .col-sx{
     background-color: white;
     align-self: flex-start;
 }
-.send{
+.sent{
     background-color: #d5f9ba;
     align-self: flex-end;
 }
