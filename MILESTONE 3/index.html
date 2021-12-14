@@ -108,6 +108,7 @@ un “ok” come risposta, che apparirà dopo 1 secondo. -->
                             <!-- single CONTACT -->
                         <div v-for="(contact, index) in contacts" 
                         class="contact-container vertical-center" 
+                        :class="{'active' : index === activeContact}"
                         @click="singleChat(index)">
                             <div id="contact" class="vertical-center">
                                 <div class="circle-profile">
