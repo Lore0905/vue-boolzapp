@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 var app5 = new Vue({
     el: '#root',
     data: {
+        wordLengthMin: 2,
         sendNewMex: '',
         activeContact: 0,
         contacts: [
@@ -98,21 +99,25 @@ var app5 = new Vue({
         },
         newMex: function(){
 
-            this.contacts[this.activeContact].messages.push(  {
-                date: '10/01/2020 15:30:55',
-                text: this.sendNewMex,
-                status: 'sent'
-            });
+            if(this.sendNewMex.length > 2){
+                this.contacts[this.activeContact].messages.push(  {
+                    date: '10/01/2020 15:30:55',
+                    text: this.sendNewMex,
+                    status: 'sent'
+                });
+            }
+            
             
             this.sendNewMex = ''
 
             const answer = setTimeout(() => {
-
+                
                 this.contacts[this.activeContact].messages.push(  {
                     date: '10/01/2020 15:30:55',
                     text: 'Va bene',
                     status: 'received'
                 });
+            
             },1000);
         },
         
