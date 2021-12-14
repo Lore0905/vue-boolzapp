@@ -99,26 +99,27 @@ var app5 = new Vue({
         },
         newMex: function(){
 
-            if(this.sendNewMex.length > 2){
+            if(this.sendNewMex.trim().length > this.wordLengthMin){
                 this.contacts[this.activeContact].messages.push(  {
                     date: dayjs().format("DD/MM/YYYY HH:mm:ss") ,
                     text: this.sendNewMex,
                     status: 'sent'
                 });
-            }
             
             
-            this.sendNewMex = ''
+            
+                this.sendNewMex = ''
 
-            const answer = setTimeout(() => {
+                setTimeout(() => {
+                    
+                    this.contacts[this.activeContact].messages.push(  {
+                        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                        text: 'Va bene',
+                        status: 'received'
+                    });
                 
-                this.contacts[this.activeContact].messages.push(  {
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                    text: 'Va bene',
-                    status: 'received'
-                });
-            
-            },1000);
+                },1000);
+            }
         },
         
     }
