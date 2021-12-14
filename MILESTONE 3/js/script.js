@@ -101,7 +101,7 @@ var app5 = new Vue({
 
             if(this.sendNewMex.length > 2){
                 this.contacts[this.activeContact].messages.push(  {
-                    date: '10/01/2020 15:30:55',
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss") ,
                     text: this.sendNewMex,
                     status: 'sent'
                 });
@@ -113,7 +113,7 @@ var app5 = new Vue({
             const answer = setTimeout(() => {
                 
                 this.contacts[this.activeContact].messages.push(  {
-                    date: '10/01/2020 15:30:55',
+                    date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     text: 'Va bene',
                     status: 'received'
                 });
