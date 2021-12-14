@@ -123,10 +123,14 @@ var app5 = new Vue({
             }
         },
         filterContacts: function(){
-            this.contacts.forEach(element => {
-                const singleWordContacts = element.name.split('')
+            this.contacts.forEach((element) => {
+                const singleWordContacts = element.name
 
-                console.log(singleWordContacts.includes(this.filter))
+                if(singleWordContacts.toLowerCase().includes(this.filter.toLowerCase())){
+                    element.visible = true;
+                }else{
+                    element.visible = false;
+                }
             });
         }
         

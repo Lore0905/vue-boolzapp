@@ -110,6 +110,7 @@ vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
                     <div id="contacts-wrap">
                             <!-- single CONTACT -->
                         <div v-for="(contact, index) in contacts" 
+                        v-if="contact.visible"
                         class="contact-container vertical-center" 
                         :class="{'active' : index === activeContact}"
                         @click="singleChat(index)">
