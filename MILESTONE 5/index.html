@@ -134,11 +134,12 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
                     <!-- mex container -->
                     <div id="mex-wrapper">
-                        <div class="mex-container" v-for="mex in contacts[activeContact].messages" 
-                            :class="mex.status === 'sent' ? 'sent' : 'recived' ">
+                        <div class="mex-container" 
+                        v-for="(mex, index) in contacts[activeContact].messages" 
+                        :class="mex.status === 'sent' ? 'sent' : 'recived' "
+                        @click="activeMexMenu(index)">
 
                             <div>
-                                
                                 <p> {{mex.text}}</p>
                                 <!-- date -->
                                 <div class="date">
@@ -147,10 +148,16 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
                             </div>
                             
                             <!-- menu delete -->
-                            
-                            
+                            <div class="menu-mex" >
+                                <div>
+                                    Messase info
+                                </div>
+                                <div id="delete-mex">
+                                    Delete message
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="delete-mex"></div>
                     </div>
 
                     <!-- mex bar -->

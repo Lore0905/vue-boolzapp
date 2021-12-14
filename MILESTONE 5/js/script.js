@@ -124,14 +124,23 @@ var app5 = new Vue({
         },
         filterContacts: function(){
             this.contacts.forEach((element) => {
-                const singleWordContacts = element.name
+                const singleNameContacts = element.name
 
-                if(singleWordContacts.toLowerCase().includes(this.filter.toLowerCase())){
+                if(singleNameContacts.toLowerCase().includes(this.filter.toLowerCase())){
                     element.visible = true;
                 }else{
                     element.visible = false;
                 }
             });
+        },
+        activeMexMenu: function(index){
+            const addMenuMex = this.contacts[this.activeContact].messages[index]
+            
+            const selectMenu = document.querySelector('.menu-mex');
+
+            addMenuMex.classList.add("active-menu-mex");
+
+
         }
         
     }

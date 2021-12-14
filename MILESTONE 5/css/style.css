@@ -245,12 +245,21 @@ main > .col-sx{
 }
 
 /* DELETE MEX */
-.delete-mex{
+.menu-mex{
     width: 150px;
-    height: 20px;
     background-color: white;
-    position: relative;
-    top: 0px;
-    right: 0px;
+    position: absolute;
+    top: 55%;
+    right: 5%;
+    z-index: 5;
+    padding: 12px 20px;
+    display: none;
 }
+#delete-mex{
+    padding-top: 12px;
+}
+.active-menu-mex{
+    display: block;
+}
+
 
