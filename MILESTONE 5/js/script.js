@@ -136,9 +136,10 @@ var app5 = new Vue({
         activeMexMenu: function(index){
             const addMenuMex = this.contacts[this.activeContact].messages[index]
             
-            const selectMenu = document.querySelector('.menu-mex');
+            console.log(addMenuMex)
+            // const selectMenu = document.querySelector('.menu-mex');
 
-            addMenuMex.classList.add("active-menu-mex");
+            // addMenuMex.classList.add("active-menu-mex");
 
 
         }
