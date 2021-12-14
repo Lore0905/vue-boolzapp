@@ -1,0 +1,172 @@
+<!-- Milestone 3
+Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e 
+digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà 
+un “ok” come risposta, che apparirà dopo 1 secondo. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- framework -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- end framework -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- gogole font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Vue Boolzapp</title>
+</head>
+<body>
+    
+    <div id="root">
+
+        <!-- app wrapper -->
+        <div class="app-wrapper">
+
+            <!-- HEADER -->
+            <header>
+                <!-- COL SX-->
+                <div class="col col-sx">
+                    <!-- user profile -->
+                    <div id="user-profile" class="vertical-center">
+                        <div class="circle-profile">
+                            <img src="../boolzapp-assets/img/avatar_io.jpg" alt="">
+                        </div>
+                        <!-- user name -->
+                        <div class="info-user-profile">
+                            <h3>Nome Utente</h3>
+                        </div>
+                    </div>
+
+                    <!-- user menù -->
+                    <div class="user-menu">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+
+                </div>
+                <!-- COL DX-->
+                <div class="col col-dx">
+
+                    <!-- single profile -->
+                    <div id="active-profile" class="vertical-center ">
+                        <div class="circle-profile">
+                            <img :src="'../boolzapp-assets/img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="">
+                        </div>
+                        <!-- user name -->
+                        <div class="info-current-profile">
+                            <h3>{{contacts[activeContact].name}}</h3>
+                            <div class="last-access">Ultimo accesso oggi alle</div>
+                        </div>
+                    </div>
+
+                    <!-- user menù -->
+                    <div class="user-menu">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER -->
+
+            <!-- MAIN -->
+            <main>
+                <!-- COL SX -->
+                <div class="col col-sx">
+
+                    <!-- notifications -->
+                    <div id="notification" class="vertical-center">
+                        <!-- img notification -->
+                        <div class="circle-profile vertical-horrizontal-center">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <!-- mex notification -->
+                        <div class="mex-notification">
+                            <div>Ricevi notifiche di nuovi messaggi</div>
+                            <a href="#">Attiva notifiche dekstop</a>
+                        </div>
+                    </div> 
+                    
+                    <!-- serch contact -->
+                    <div id="container-serch" class="vertical-horrizontal-center">
+                        <div id="serch-bar" class="vertical-center">
+                            <span><i class="fas fa-search"></i></span>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
+<!-- ---------------------------------------------------------------------------------- -->
+                    <div id="contacts-wrap">
+                            <!-- single CONTACT -->
+                        <div v-for="(contact, index) in contacts" 
+                        class="contact-container vertical-center" 
+                        @click="singleChat(index)">
+                            <div id="contact" class="vertical-center">
+                                <div class="circle-profile">
+                                    <img :src="'../boolzapp-assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                                </div>
+                                <!-- user name -->
+                                <h3>{{contact.name}}</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+<!-- ---------------------------------------------------------------------------------- -->
+
+                </div>
+
+                <!-- COL DX -->
+                <div class="col col-dx">
+
+                    <!-- mex container -->
+                    <div id="mex-wrapper">
+                        <div class="mex-container" v-for="mex in contacts[activeContact].messages" 
+                            :class="mex.status === 'sent' ? 'sent' : 'recived' ">
+
+                            <div>
+                                <p> {{mex.text}}</p>
+                                <!-- date -->
+                                <div class="date">
+                                    {{mex.date}}
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- mex bar -->
+                    <div id="mex-bar" class="vertical-center">
+                        <!-- emoticon -->
+                        <div id="emoticon">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <!-- input mex -->
+                        <div id="input-mex" @keyup.enter='newMex'>
+                            <input type="text" placeholder="scrivi un messaggio" v-model='sendNewMex'>
+                        </div>
+                        <!-- microphone -->
+                        <div id="audio">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            <!-- END MAIN -->
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
