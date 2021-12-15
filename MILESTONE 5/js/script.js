@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 var app5 = new Vue({
     el: '#root',
     data: {
+        activeMex: 0,
         filter: '',
         wordLengthMin: 2,
         sendNewMex: '',
@@ -134,14 +135,10 @@ var app5 = new Vue({
             });
         },
         activeMexMenu: function(index){
-            const addMenuMex = this.contacts[this.activeContact].messages[index]
             
-            console.log(addMenuMex)
-            // const selectMenu = document.querySelector('.menu-mex');
-
-            // addMenuMex.classList.add("active-menu-mex");
-
-
+            this.activeMex = index
+            
+            console.log(this.activeMex)
         }
         
     }
