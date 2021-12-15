@@ -135,12 +135,12 @@ var app5 = new Vue({
             });
         },
         activeMexMenu: function(index){
-            
             this.activeMex = index
             
-            console.log(this.activeMex)
+        },
+        deleteMex: function(index){
+            this.contacts[this.activeContact].messages.splice(index, 1);
         }
-        
     }
 })
 
