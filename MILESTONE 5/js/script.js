@@ -3,7 +3,7 @@ Vue.config.devtools = true;
 var app5 = new Vue({
     el: '#root',
     data: {
-        activeMex: 0,
+        activeMex: null,
         filter: '',
         wordLengthMin: 2,
         sendNewMex: '',
@@ -135,11 +135,15 @@ var app5 = new Vue({
             });
         },
         activeMexMenu: function(index){
-            this.activeMex = index
-            
+            if(this.activeMex === null){
+                this.activeMex = index
+            }else {
+                this.activeMex = null
+            }
         },
         deleteMex: function(index){
             this.contacts[this.activeContact].messages.splice(index, 1);
+
         }
     }
 })
