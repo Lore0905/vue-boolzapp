@@ -144,6 +144,20 @@ var app5 = new Vue({
         deleteMex: function(index){
             this.contacts[this.activeContact].messages.splice(index, 1);
 
+        },
+        getLastMessageDate: function(index){
+            return this.contacts[index].messages[this.contacts[index].messages.length -1].date
+        },
+        getLastMessage: function(index){
+            const lastMexContact = this.contacts[index].messages[this.contacts[index].messages.length -1].text
+
+            if(lastMexContact.length > 20){
+                return lastMexContact.slice(0, 20) + "..."
+            }else{
+                return lastMexContact
+            }
+
+            
         }
     }
 })

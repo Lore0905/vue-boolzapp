@@ -118,8 +118,18 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
                                 <div class="circle-profile">
                                     <img :src="'../boolzapp-assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                 </div>
-                                <!-- user name -->
-                                <h3>{{contact.name}}</h3>
+                                <div id="info-contact">
+                                    <!-- user name -->
+                                    <h3>{{contact.name}}</h3>
+                                    <!-- last mex contact -->
+                                    <div id="last-mex-contact">
+                                        <p>{{getLastMessage(index)}}</p>
+                                    </div>
+                                </div>
+                                <!-- data -->
+                                <div id="date-last-mex-contact">
+                                    <span>{{getLastMessageDate(index)}}</span>
+                                </div>
                             </div>
                         </div>
 
